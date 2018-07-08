@@ -17,17 +17,7 @@ public class FizzBuzzService {
 
     public List<Integer> split(String numbers)  {
 
-        if(numbers == null || numbers.isEmpty()){
-            throw new IllegalArgumentException("you should provide input");
-        }
-
-        
-        for(int i =0;i<numbers.length();i++){
-             if(!Character.isDigit( numbers.charAt(i)) && numbers.charAt(i)!=' '){
-                 throw new IllegalArgumentException("you should provide input as numbers");
-             }
-        }
-
+        validateInput(numbers);
 
         String[] splitted = numbers.split(" ");
         List<Integer> splittedNumbers = new LinkedList<>();
@@ -40,6 +30,7 @@ public class FizzBuzzService {
 
         return splittedNumbers;
     }
+
 
     public String processNumbers(List<Integer> numbers) {
         StringBuilder sb = new StringBuilder();
@@ -59,6 +50,19 @@ public class FizzBuzzService {
     }
 
 
+    private void validateInput(String numbers) {
+        if(numbers == null || numbers.isEmpty()){
+            LOGGER.error(ErrorCodes.code1000);
+            throw new IllegalArgumentException(ErrorCodes.code1000);
+        }
+
+        for(int i =0 ; i<numbers.length() ; i++){
+            if(!Character.isDigit( numbers.charAt(i)) && numbers.charAt(i)!=' '){
+                LOGGER.error(ErrorCodes.code1001);
+                throw new IllegalArgumentException(ErrorCodes.code1001);
+            }
+        }
+    }
 
 
 }

@@ -21,7 +21,13 @@ public class FizzBuzzResource {
     @Path("generate")
     @GET
     public String generate(@QueryParam("numbers") String numbersStr)  {
-        List<Integer> numbers = fizzBuzzService.split(numbersStr);
-        return fizzBuzzService.processNumbers(numbers);
+        try {
+            List<Integer> numbers = fizzBuzzService.split(numbersStr);
+            return fizzBuzzService.processNumbers(numbers);
+        }
+        catch (Exception e){
+            LOGGER.error("exception", e);
+            return e.getCause().toString();
+        }
     }
 }
