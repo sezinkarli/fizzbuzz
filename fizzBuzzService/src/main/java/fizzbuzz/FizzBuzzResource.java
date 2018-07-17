@@ -16,7 +16,7 @@ public class FizzBuzzResource {
     private static final Logger LOGGER = LoggerFactory.getLogger(FizzBuzzResource.class);
 
     @Inject
-    FizzBuzzService fizzBuzzService;
+    private FizzBuzzService fizzBuzzService;
 
     @Path("generate")
     @GET

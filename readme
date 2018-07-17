@@ -1,11 +1,12 @@
 I dockerized the app, and deployed it on digitalocean.
-I developed a service, working on rest api. But could not fidn time to build a web UI.
+I developed a service, working on rest api. But could not find time to build a web UI.
 
 
 Usage:
-input numbers should be  separated by empty spaces. Number of empty spaces does not matter.
+Input numbers should be separated by empty spaces. Number of empty spaces does not matter.
 
-example usage is as follows:
+Example usage is as follows:
+
 'http://174.138.8.90:9090/fizzbuzz/api/v1/fizzBuzz/generate?numbers=44%2055%2066'
 'http://174.138.8.90:9090/fizzbuzz/api/v1/fizzBuzz/generate?numbers=3    5'
 'http://174.138.8.90:9090/fizzbuzz/api/v1/fizzBuzz/generate?numbers=77   88 99'
